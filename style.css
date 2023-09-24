@@ -1,0 +1,161 @@
+/*Usahakan kalau membuat style css itu harus berurutan sesuai dengan HTML*/
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    overflow-x: hidden; /* untuk mengunci horizontal */
+    /* overflow-y: hidden; */ /* untuk mengunci bagian vertical */
+}
+/* navbar */
+nav {
+    width: 100%;
+    height: 80px;
+    background-color: #0B2CA1;
+    padding: 0px 120px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0; /* Navbar akan tetap di atas saat menggulir ke bawah */
+    z-index: 100; /* Untuk mengatasi tumpang tindih dengan elemen lain (jika diperlukan) */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.wrap-menu {
+    display: flex; /* cukup aktifkan flex saja nanti untuk jarak antar menu gunakan padding */
+}
+
+.menu {
+    padding: 0 16px;
+    font-size: 20px;
+    font-weight: 500;
+    position: relative; /* Ubah posisi menjadi relative */
+}
+
+.menu::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background: white;
+    position: absolute; /* Ubah posisi menjadi absolute */
+    left: 50%; /* Mulai dari tengah menu */
+    transform: translateX(-50%); /* Pusatkan garis horizontalnya */
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.menu:hover::after { /* memberikan efek garis */
+    width: 70%;
+}
+/* end navbar */
+
+/* hero-section */
+.hero-section{ /* continer dibagian ketrangan dan foto */
+    width: 100%;
+    height: 670px;
+    padding: 0px 200px;
+    display: flex;
+    background-color: #2A48B5;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+.hero-information h3{/* untuk bagian hai kawan kawan*/
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 16px;/* untuk batas luar */
+}
+.hero-information h1{ /* untuk bagian nama */
+    font-size: 40px;
+    font-weight: 600; 
+    margin-bottom: 16px;  
+}
+.hero-information p{ /* untuk bagian pengenalan diri */
+    font-size: 20px;
+    margin-bottom: 28px;
+}
+.hero-information a{ /* untuk link download cv */
+    padding: 8px 32px;
+    background-color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration:none;
+    border-radius: 50px;
+    transition: 0.4;
+}
+.hero-information a:hover{ /* memberikan efek pembesaran */
+    padding: 16px 40px;
+}
+.hero-image{
+    width: 350px;
+    height: 350px;
+}
+.hero-image img{
+    width: 100%;
+    height:100%;
+}
+/* end hero-section */
+
+/* portofolio-section */
+.hero-portofolio {
+    width: 100%;
+    height: auto;
+    padding: 0px 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.por-information{
+    margin-top: 100px;
+}
+.por-information h1 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.por-information h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+.por-image {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.card {
+    flex-basis: calc(33.33% - 0.5px); /* Membagi menjadi 3 kolom dengan jarak 10px */
+    margin-bottom: 20px; /* Jarak antara baris */
+    text-align: center;
+    margin-bottom: 50px;
+}
+.card img {
+    height: 300px;
+    border-radius: 20px;
+    transition: 0.4s; /* Menambahkan efek transisi */
+}
+.card img:hover {
+    height: 320px; /* Mengubah tinggi gambar saat menghover */
+}
+.card p{
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+/* end portofolio-section */
