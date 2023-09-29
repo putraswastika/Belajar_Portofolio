@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortoFolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            Putra Swastika
+        </div>
+        <div class="wrap-menu">
+            <div class="menu">Beranda</div>
+            <div class="menu">Portofolio</div>
+            <div class="menu">Kontak</div>
+        </div>
+    </nav>
+    <!-- end navigation bar -->
+
+    <!-- hero-section -->
+    <section class="hero-section">
+        <div class="hero-information">
+            <h3>Halo Kawan-Kawan🙌 Saya adalah</h3>
+            <h1>Putra Swastika</h1>
+            <p>Saya seorang <span style="font-weight: 700; text-decoration:underline;">Software Engineering</span> <br>
+                dan <span style="font-weight: 700; text-decoration:underline;">Data Analiytic</span> yang telah memiliki<br> 
+                pengalaman selama 3 tahun, saat ini sedang<br>
+                bekerja di salah satu Perusahaan ternama di Bali<br>
+            </p>
+            <a href="#">
+                DOWNLOAD CV
+            </a>
+        </div>
+        <div class="hero-image">
+            <img src="../img/hasil edit.jpg" alt="fotoku">
+        </div>
+    </section>
+<!-- end hero-section -->
+
+<!-- portofilio-section -->
+<section class="hero-portofolio"">
+    <div class="por-information">
+        <h1>PORTOFOLIO</h1>
+        <h3>Berikut adalah hasil portofolio saya</h3>
+    </div>
+    <div class="por-image">
+        <div class="card">
+            <img src="../img/mee.jpg" alt="">
+            <p>HASIL 1</p>
+        </div>
+        <div class="card">
+            <img src="../img/mee.jpg" alt="">
+            <p>HASIL 2</p>
+        </div>
+        <div class="card">
+            <img src="../img/mee.jpg" alt="">
+            <p>HASIL 3</p>
+        </div>
+        <div class="card">
+            <img src="../img/mee.jpg" alt="">
+            <p>HASIL 4</p>
+        </div>
+        <div class="card">
+            <img src="../img/mee.jpg" alt="">
+            <p>HASIL 5</p>
+        </div>
+        <div class="card">
+            <img src="../img/mee.jpg" alt="">
+            <p>HASIL 6</p>
+        </div>
+    </div>
+</section>
+<!-- end portofolio-section -->
+
+<!-- section form contact -->
+<section class = hero-contact>
+    <div class="title-contact">
+        <h1>FORMULIR KONTAK</h1>
+        <p> Hubungi saya jika ada pertanyaan atau ingin berkolaborasi</p>
+    </div>
+    <div class="main-portofolio">
+    <!-- <form id="contac-form">
+        <div id="contact-name-email">
+            <div class="input-group">
+              <label for="name" style="font-size: 27px; font-weight:bold">Nama:</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+          
+            <div class="input-group">
+              <label for="email" style="font-size: 27px; font-weight:bold">Email:</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          
+        <label for="message" style="font-size: 27px; font-weight:bold">Pesan:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+        <button id="submit" type="submit">Kirim</button>
+    </form> -->
+    <form id="contact-form" action="/send_email" method="post">
+        <div id="contact-name-email">
+            <div class="input-group">
+              <label for="name" style="font-size: 27px; font-weight:bold">Nama:</label>
+              <input type="text" id="name" placeholder="FULL NAME" required>
+            </div>
+          
+            <div class="input-group">
+              <label for="email" style="font-size: 27px; font-weight:bold">Email:</label>
+              <input type="email" id="email" placeholder="E-MAIL" required>
+            </div>
+        </div>
+      
+        <label for="test" style="font-size: 27px; font-weight:bold">Subjek</label><br>
+        <input type="test" id="subject" placeholder="SUBJECT" required><br>
+        <label for="message" style="font-size: 27px; font-weight:bold">Pesan:</label><br>
+        <textarea id="message" name="message" rows="10" cols="30" placeholder="MESSAGE"></textarea><br><br>
+    
+        <button id="submit" type="submit">Kirim</button>
+    </form>
+</div>
+</section>
+
+<!-- footer -->
+<section id="footer">
+<h1>MADE WITH SERIOUSNESS🔥</h1>
+</section>
+<script src="./js/script.js"></script>
+</body>
+</html>
