@@ -1,34 +1,38 @@
-const contactForm = document.querySelector('#contact-form')
-let name = document.getElementById('name');
-let email = document.getElementById('email');
-let subject = document.getElementById('subject')
-let message = document.getElementById('message');
+const contactForm = document.querySelector('#contact-form');
 
-contactForm.addEventListener('submit',(e)=>{
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    let formData = {
-        name: name.value,
-        email: email.value,
-        subject: subject.value,
-        message:message.value
-    }
+    const target = e.target,
+        name = target.querySelector('#name').value,
+        from = target.querySelector('#from').value, // Ubah dari 'email' menjadi 'to'
+        subject = target.querySelector('#subject').value,
+        message = target.querySelector('#message').value;
 
-    let xhr = new XMLHttpRequest();
-    xhr.open('POST','/');
-    xhr.setRequestHeader('content-type',  'application/json');
-    xhr.onload = function(){
-        console.log(xhr.responseText);
-        if(xhr.responseText == 'succses'){
-            alert('Email sent');
-            name.value = '';
-            email.value = '';
-            subject.value= '';
-            message.value = '';
-        }else{
-            alert('Something went wrong!')
-        }       
-    }
-    xhr.send(JSON.stringify(formData));
+    try {
+        const response = await fetch('http://localhost:5000/api/email', {
+            method: 'POST',
+            body: JSON.stringify({
+                name,
+                from, // Gunakan 'to' sebagai alamat email penerima
+                subject,
+                message
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
 
-})
+        const data = await response.json();
+
+        if (response.status === 200) {
+            alert(data.message);
+            contactForm.reset();
+        } else {
+            alert(data.message);
+        }
+    } catch (error) {
+        console.error(error);
+        alert('Something went wrong with the request.');
+    }
+});
