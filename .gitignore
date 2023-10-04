@@ -1,5 +1,0 @@
-# Mengabaikan direktori node_modules
-node_modules/
-
-# Mengabaikan file .env
-.env

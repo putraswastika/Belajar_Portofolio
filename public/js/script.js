@@ -1,3 +1,5 @@
+const API_BASE_URL = 'belajarportofoliobe-production.up.railway.app';
+
 const contactForm = document.querySelector('#contact-form');
 
 contactForm.addEventListener('submit', async (e) => {
@@ -5,12 +7,12 @@ contactForm.addEventListener('submit', async (e) => {
 
     const target = e.target,
         name = target.querySelector('#name').value,
-        from = target.querySelector('#from').value, // Ubah dari 'email' menjadi 'to'
+        from = target.querySelector('#from').value, 
         subject = target.querySelector('#subject').value,
         message = target.querySelector('#message').value;
 
     try {
-        const response = await fetch('http://localhost:5000/api/email', {
+        const response = await fetch(`${API_BASE_URL}/api/email`, {
             method: 'POST',
             body: JSON.stringify({
                 name,
