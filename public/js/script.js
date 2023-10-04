@@ -1,4 +1,4 @@
-const API_BASE_URL = 'belajarportofoliobe-production.up.railway.app';
+const API_BASE_URL = 'https://belajarportofoliobe-production.up.railway.app';
 
 const contactForm = document.querySelector('#contact-form');
 
