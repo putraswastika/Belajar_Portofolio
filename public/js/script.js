@@ -16,7 +16,7 @@ contactForm.addEventListener('submit', async (e) => {
             method: 'POST',
             body: JSON.stringify({
                 name,
-                from, // Gunakan 'to' sebagai alamat email penerima
+                from, 
                 subject,
                 message
             }),
@@ -25,13 +25,13 @@ contactForm.addEventListener('submit', async (e) => {
             }
         });
 
-        const data = await response.json();
-
         if (response.status === 200) {
+            const data = await response.json();
             alert(data.message);
             contactForm.reset();
         } else {
-            alert(data.message);
+            const text = await response.text();
+            alert(text);
         }
     } catch (error) {
         console.error(error);
